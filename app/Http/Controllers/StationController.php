@@ -14,7 +14,7 @@ class StationController extends Controller
      */
     public function index()
     {
-        return view('stations.index', ['stations' => Station::paginate(6)]);
+        return view('stations.index', ['stations' => Station::paginate(15)]);
     }
 
     /**

@@ -11,12 +11,6 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Scripts -->
-    <script src="/js/jquery.mobile-1.4.5.min.js"></script>
-    <script>
-        $('body').on('swipeleft', function () {
-            $('a[rel="next"]').click();
-        });
-    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -92,5 +86,12 @@
             </div>
         </div>
     </div>
+    <script src="/js/jquery-2.2.4.min.js"></script>]
+
+    <script>
+        $(function () {
+            $('.pagination').addClass('flex-wrap');
+        });
+    </script>
 </body>
 </html>

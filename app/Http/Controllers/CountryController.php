@@ -47,7 +47,7 @@ class CountryController extends Controller
     public function show(Country $country, $slug)
     {
         $country = Country::where('slug', $slug)->first();
-        return view('stations.index', ['stations' => $country->stations()->paginate(6)]);
+        return view('stations.index', ['stations' => $country->stations()->paginate(15)]);
     }
 
     /**
