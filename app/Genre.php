@@ -9,7 +9,7 @@ class Genre extends Model
 {
     public function stations()
     {
-        return $this->belongsToMany(Station::class)
+        return $this->belongsToMany(Station::class, 'station_genre')
             ->withTimestamps();
     }
 

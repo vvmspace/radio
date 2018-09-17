@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('countries') }}">{{ __('Countries') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('genres') }}">{{ __('Genres') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
