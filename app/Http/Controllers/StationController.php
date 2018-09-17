@@ -47,7 +47,7 @@ class StationController extends Controller
     public function show(Station $station, $slug)
     {
         $station = Station::where('slug', $slug)->first();
-        return view('stations.show', ['station' => $station]);
+        return view('stations.show', ['station' => $station, 'title' => "Listen {$station->name} online"]);
     }
 
     /**
