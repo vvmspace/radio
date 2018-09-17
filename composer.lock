@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "14bfc401531730dc10500c369854f859",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -208,6 +208,42 @@
                 "schedule"
             ],
             "time": "2018-06-06T03:12:17+00:00"
+        },
+        {
+            "name": "eddieace/php-simple",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eddieace/php-simple.git",
+                "reference": "58046af8ac12e1889d5922b2728e39ae1711c4a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eddieace/php-simple/zipball/58046af8ac12e1889d5922b2728e39ae1711c4a5",
+                "reference": "58046af8ac12e1889d5922b2728e39ae1711c4a5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Eddieace\\PhpSimple\\HtmlDomParser": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Edvard Åkerberg",
+                    "email": "edvard@4film.se"
+                }
+            ],
+            "time": "2017-11-07T15:52:34+00:00"
         },
         {
             "name": "egulias/email-validator",
