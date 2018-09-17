@@ -12,9 +12,9 @@ class StationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
-        //
+        return view('stations.index');
     }
 
     /**
@@ -44,9 +44,9 @@ class StationController extends Controller
      * @param  \App\Station  $stream
      * @return \Illuminate\Http\Response
      */
-    public function show(Station $stream)
+    public function show(Station $station)
     {
-        //
+
     }
 
     /**
@@ -55,7 +55,7 @@ class StationController extends Controller
      * @param  \App\Station  $stream
      * @return \Illuminate\Http\Response
      */
-    public function edit(Station $stream)
+    public function edit(Station $station)
     {
         //
     }
@@ -67,7 +67,7 @@ class StationController extends Controller
      * @param  \App\Station  $stream
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Station $stream)
+    public function update(Request $request, Station $station)
     {
         //
     }
@@ -78,7 +78,7 @@ class StationController extends Controller
      * @param  \App\Station  $stream
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Station $stream)
+    public function destroy(Station $station)
     {
         //
     }
