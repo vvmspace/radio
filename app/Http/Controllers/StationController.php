@@ -12,7 +12,7 @@ class StationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index()
     {
         return view('stations.index');
     }
@@ -81,5 +81,12 @@ class StationController extends Controller
     public function destroy(Station $station)
     {
         //
+    }
+
+    public function show_site($slug){
+        $station = Station::where('slug', $slug)->first();
+        if($station){
+            return view('stations.show', ['station' => $station]);
+        }
     }
 }
