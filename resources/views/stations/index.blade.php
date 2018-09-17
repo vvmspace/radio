@@ -8,7 +8,9 @@
                 <div><audio src="{{ $station->best_stream()->stream_url }}" controls preload="none"></audio></div>
             </div>
         @endforeach
+            <div class="col-md-12">
+                {{ $stations->links() }}
+            </div>
         </div>
-    {{ $stations->links() }}
     </div>
 @endsection
