@@ -73,6 +73,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <div class="col-md-12">
+            This is a night-alpha version. User accounts and stats will be deleted after release.
+        </div>
     </div>
 </body>
 </html>
