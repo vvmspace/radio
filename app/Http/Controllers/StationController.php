@@ -44,9 +44,10 @@ class StationController extends Controller
      * @param  \App\Station  $stream
      * @return \Illuminate\Http\Response
      */
-    public function show(Station $station)
+    public function show(Station $station, $slug)
     {
-
+        $station = Station::where('slug', $slug)->first();
+        return view('stations.show', ['station' => $station]);
     }
 
     /**

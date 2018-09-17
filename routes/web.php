@@ -20,4 +20,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/countries', 'CountryController@index')->name('countries');
 Route::get('/genres', 'GenreController@index')->name('genres');
 
-Route::get('/{slug}', 'StationController@show_site');
+Route::get('/like-{slug}', 'GenreController@show')->where('slug', '(.*)');
+Route::get('/from-{slug}', 'CountryController@show')->where('slug', '(.*)');
+Route::get('/{slug}-online', 'StationController@show')->where('slug', '(.*)');

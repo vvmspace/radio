@@ -44,9 +44,10 @@ class GenreController extends Controller
      * @param  \App\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function show(Genre $genre)
+    public function show(Genre $genre, $slug)
     {
-        //
+        $genre = Genre::where('slug', $slug)->first();
+        return view('stations.index', ['stations' => $genre->stations()->paginate(15)]);
     }
 
     /**

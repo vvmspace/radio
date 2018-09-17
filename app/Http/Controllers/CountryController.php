@@ -44,9 +44,10 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Country $country)
+    public function show(Country $country, $slug)
     {
-        //
+        $country = Country::where('slug', $slug)->first();
+        return view('stations.index', ['stations' => $country->stations()->paginate(15)]);
     }
 
     /**
