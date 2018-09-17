@@ -52,8 +52,13 @@ class Station extends Model
         return $this->belongsToMany(Genre::class, 'station_genre')
             ->withTimestamps();
     }
+
     public function country()
     {
         return $this->hasOne(Country::class, 'id', 'country_id');
+    }
+
+    public function best_stream(){
+        return Stream::where('station_id', $this->id)->orderBy('kbps', 'desc')->first();
     }
 }
