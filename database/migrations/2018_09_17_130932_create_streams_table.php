@@ -15,6 +15,7 @@ class CreateStreamsTable extends Migration
     {
         Schema::create('streams', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('station_id')->nullable();
             $table->integer('kbps')->nullable();
             $table->string('stream_url')->nullable();
             $table->timestamps();
