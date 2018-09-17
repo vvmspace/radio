@@ -17,6 +17,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/countries', 'CountryController@index');
+Route::get('/countries', 'CountryController@index')->name('countries');
 
 Route::get('/{slug}', 'StationController@show_site');
