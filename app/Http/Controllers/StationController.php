@@ -90,4 +90,10 @@ class StationController extends Controller
             return view('stations.show', ['station' => $station]);
         }
     }
+
+    public function m3u($slug){
+        $station = Station::where('slug', $slug)->first();
+        return response(view('stations.m3u', ['station' => $station]), 200)
+            ->header('Content-Type', 'audio/mpegurl')->header('Content-Disposition', 'attachment');
+    }
 }
