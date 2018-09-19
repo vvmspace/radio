@@ -5,11 +5,10 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>{{ $station->name }}</h1>
-            </div>
-            <div class="col-md-12">
-                @foreach($station->genres as $genre)
+                <p>@foreach($station->genres as $genre)
                     <a href="/like-{{ $genre->slug }}">{{ $genre->name }}</a>
-                @endforeach
+                @endforeach</p>
+                <p>Listened {{ $station->listened ?? 0 }} times</p>
             </div>
             <div class="col-md-12"><audio src="{{ $station->best_stream()->getUrl() }}" controls preload="none"></audio></div>
             <div class="col-md-12">
