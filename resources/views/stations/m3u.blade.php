@@ -2,5 +2,5 @@
 
 @foreach($station->streams as $stream)
 #EXTINF: {{ $station->name }} {{ $stream->kbps }}kbps - {{ env('APP_NAME') }} {{ env('APP_URL') }}
-{{ $stream->stream_url }}
+{{ $stream->getUrl() }}
 @endforeach
