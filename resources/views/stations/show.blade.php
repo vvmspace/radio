@@ -11,7 +11,7 @@
                     <a href="/like-{{ $genre->slug }}">{{ $genre->name }}</a>
                 @endforeach
             </div>
-            <div class="col-md-12"><audio src="{{ $station->best_stream()->stream_url }}" controls preload="none"></audio></div>
+            <div class="col-md-12"><audio src="{{ $station->best_stream()->getUrl() }}" controls preload="none"></audio></div>
             <div class="col-md-12">
                 <h2>Listen {{ $station->name }} in Winamp/Aimp online:</h2>
                 <p>Just <b>download <a href="/m3u/{{ $station->slug }}_Radio.VVM.SPACE.m3u">m3u</a> file</b> and open it in your favorite player!</p>
