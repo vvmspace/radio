@@ -26,3 +26,4 @@ Route::get('/like-{slug}', 'GenreController@show')->where('slug', '(.*)');
 Route::get('/from-{slug}', 'CountryController@show')->where('slug', '(.*)');
 Route::get('/{slug}-online', 'StationController@show')->where('slug', '(.*)');
 Route::get('/m3u/{slug}_Radio.VVM.SPACE.m3u', 'StationController@m3u')->where('slug', '(.*)');
+Route::get('/report/error/{id}', 'StreamController@reportError')->where('id', '(.*)');

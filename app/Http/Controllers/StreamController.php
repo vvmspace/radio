@@ -90,6 +90,8 @@ class StreamController extends Controller
         return redirect($stream->stream_url);
     }
 
-
+    public function reportError($id){
+        return Stream::find($id)->reportError();
+    }
 
 }
