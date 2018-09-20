@@ -14,7 +14,7 @@ class StationController extends Controller
      */
     public function index()
     {
-        return view('stations.index', ['stations' => Station::orderBy('listened', 'desc')->paginate(15)]);
+        return view('stations.index', ['stations' => Station::orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15)]);
     }
 
     /**
