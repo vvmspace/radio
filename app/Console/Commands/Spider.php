@@ -42,8 +42,10 @@ class Spider extends Command
     {
         $sl = SpiderLink::whereNull('parsed')->inRandomOrder()->first();
         $parsed = Spider::ParseLiveRadio($sl->url);
-        foreach ($parsed['links'] as $link){
-            SpiderLink::addUnique($link);
+        if(!empty($parsed['links'])){
+            foreach ($parsed['links'] as $link){
+                SpiderLink::addUnique($link);
+            }
         }
         $sl->parsed = true;
         $sl->save();
