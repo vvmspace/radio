@@ -18,6 +18,7 @@ class Stream extends Model
         $this->errors++;
         $this->save();
         $this->station->errors++;
+        $this->station->listened--;
         $this->station->save();
         return $this->station;
     }
