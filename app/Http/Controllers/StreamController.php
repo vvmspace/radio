@@ -85,9 +85,13 @@ class StreamController extends Controller
 
     public function restream($id, $visitor){
         $stream = Stream::find($id);
-        $stream->station->listened++;
-        $stream->station->save();
-        return redirect($stream->stream_url);
+        if($stream->check()){
+            $stream->station->listened++;
+            $stream->station->save();
+            return redirect($stream->stream_url);
+        }else{
+            $stream->reportError();
+        }
     }
 
     public function reportError($id){

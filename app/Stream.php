@@ -18,8 +18,20 @@ class Stream extends Model
         $this->errors++;
         $this->save();
         $this->station->errors++;
-        $this->station->listened--;
         $this->station->save();
         return $this->station;
+    }
+
+    public function check(){
+        $curlHandle = curl_init();
+        curl_setopt($curlHandle, CURLOPT_URL, $this->stream_url);
+        curl_setopt($curlHandle, CURLOPT_HEADER, true);
+        curl_setopt($curlHandle, CURLOPT_NOBODY  , true);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+        curl_exec($curlHandle);
+        $response = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
+        curl_close($curlHandle);
+
+        return $response < 400;
     }
 }
