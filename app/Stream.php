@@ -28,10 +28,12 @@ class Stream extends Model
         curl_setopt($curlHandle, CURLOPT_HEADER, true);
         curl_setopt($curlHandle, CURLOPT_NOBODY  , true);
         curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curlHandle, CURLOPT_TIMEOUT_MS, 1000);
         curl_exec($curlHandle);
+        $curl_errno = curl_errno($curlHandle);
         $response = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
         curl_close($curlHandle);
 
-        return $response < 400;
+        return ($response < 400) && (empty($curl_errno));
     }
 }
