@@ -48,7 +48,7 @@ class CountryController extends Controller
     {
         $country = Country::where('slug', $slug)->first();
         return view('stations.index', [
-            'stations' => $country->stations()->paginate(15),
+            'stations' => $country->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15),
             'title' => "Listen radio from {$country->name} online"
         ]);
     }

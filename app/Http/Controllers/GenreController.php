@@ -48,7 +48,7 @@ class GenreController extends Controller
     {
         $genre = Genre::where('slug', $slug)->first();
         return view('stations.index', [
-            'stations' => $genre->stations()->paginate(15),
+            'stations' => $genre->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15),
             'title' => "Listen {$genre->name} radio online"
         ]);
     }
