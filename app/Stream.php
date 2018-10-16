@@ -34,4 +34,11 @@ class Stream extends Model
 
         return ($response > 0) && ($response < 400);
     }
+
+    function works(){
+        $this->errors = null;
+        $this->station->errors = null;
+        $this->save();
+        $this->station->save();
+    }
 }
