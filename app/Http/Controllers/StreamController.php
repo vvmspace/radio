@@ -88,6 +88,7 @@ class StreamController extends Controller
         if($stream->check()){
             $stream->station->listened++;
             $stream->station->save();
+            $stream->works();
             return redirect($stream->stream_url);
         }else{
             $stream->reportError();
