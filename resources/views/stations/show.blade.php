@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', $title ?? config('app.name', 'Laravel'))
-@section('title')
+@section('meta')
     <meta name="description" content="Easiest way to listen {{ $station->name }} live steam online: listen from web player or download m3u" />
 @endsection
 @section('content')
