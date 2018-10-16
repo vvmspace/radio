@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Radio.VVM.SPACE'),
+    'name' => env('APP_NAME', 'Listen Radio Online'),
 
     /*
     |--------------------------------------------------------------------------
