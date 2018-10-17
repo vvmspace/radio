@@ -14,7 +14,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        return view('genres.index', ['genres' => Genre::all()]);
+        return view('genres.index', ['genres' => Genre::all(), 'title' => 'Listen radio by genres online']);
     }
 
     /**
@@ -49,7 +49,8 @@ class GenreController extends Controller
         $genre = Genre::where('slug', $slug)->first();
         return view('stations.index', [
             'stations' => $genre->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15),
-            'title' => "Listen {$genre->name} radio online"
+            'title' => "Listen {$genre->name} radio online",
+            'h1' => "Listen {$genre->name} radio online"
         ]);
     }
 
