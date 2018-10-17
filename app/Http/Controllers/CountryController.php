@@ -47,10 +47,12 @@ class CountryController extends Controller
     public function show(Country $country, $slug)
     {
         $country = Country::where('slug', $slug)->first();
+        $stations = $country->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15);
+        $page = $stations->currentPage();
         return view('stations.index', [
             'stations' => $country->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15),
             'title' => "Listen radio from {$country->name} online",
-            'h1' => "Listen radio from {$country->name} online"
+            'h1' => "Listen radio from {$country->name} online" . ($page > 1) ? " (Page {$page})" : ''
         ]);
     }
 
