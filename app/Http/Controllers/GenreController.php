@@ -47,10 +47,12 @@ class GenreController extends Controller
     public function show(Genre $genre, $slug)
     {
         $genre = Genre::where('slug', $slug)->first();
+        $stations = $genre->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15);
+        $page = $stations->currentPage();
         return view('stations.index', [
-            'stations' => $genre->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15),
+            'stations' => $stations,
             'title' => "Listen {$genre->name} radio online",
-            'h1' => "Listen {$genre->name} radio online"
+            'h1' => "Listen {$genre->name} radio online" . (($page > 1) ? " (Page {$page})" : '')
         ]);
     }
 

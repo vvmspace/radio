@@ -52,7 +52,7 @@ class CountryController extends Controller
         return view('stations.index', [
             'stations' => $country->stations()->orderBy('errors', 'asc')->orderBy('listened', 'desc')->paginate(15),
             'title' => "Listen radio from {$country->name} online",
-            'h1' => "Listen radio from {$country->name} online" . ($page > 1) ? " (Page {$page})" : ''
+            'h1' => "Listen radio from {$country->name} online" . (($page > 1) ? " (Page {$page})" : '')
         ]);
     }
 
