@@ -20,13 +20,16 @@ class TrackerMiddleware
     public function handle($request, Closure $next)
     {
         // if(Previous::Stranger()){
-            $referer = $_SERVER['HTTP_REFERER'] ?? null;
-            $visit = new TrackVisit();
-            $visit->track_id = Track::GetOrCreate();
-            $visit->user_id = Auth::check() ? Auth::user()->id : null;
-            $visit->previous_id = Previous::GetId($referer);
-            $visit->uri = $request->path();
-            $visit->save();
+            $uri = $request->path();
+            if(strpos($uri, 'stream/') < 1){
+                $referer = $_SERVER['HTTP_REFERER'] ?? null;
+                $visit = new TrackVisit();
+                $visit->track_id = Track::GetOrCreate();
+                $visit->user_id = Auth::check() ? Auth::user()->id : null;
+                $visit->previous_id = Previous::GetId($referer);
+                $visit->uri = $uri;
+                $visit->save();
+            }
         // }
         return $next($request);
     }
