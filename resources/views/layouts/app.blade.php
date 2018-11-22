@@ -13,7 +13,7 @@
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}?{{ rand(1,10000) }}" defer></script>
     <!-- Scripts -->
 
     <!-- Fonts -->
