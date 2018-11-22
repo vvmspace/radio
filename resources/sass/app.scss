@@ -1,6 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fontlibrary.org/face/bebusneuebold');
 
 // Variables
 @import 'variables';
@@ -11,4 +12,31 @@
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.counter {
+  @include make-col(2);
+  text-align: right;
+  padding: 15px;
+}
+
+.powered-by {
+  @include make-col(10);
+  padding: 15px;
+  font-family: 'BebasNeueBold';
+  font-size: 35px;
+  line-height: 35px;
+}
+
+.powered-by, .counter {
+  @media(max-width: 991px){
+    @include make-col(12);
+    text-align: center;
+    color: white;
+    background: black;
+  }
+}
+
+nav, h1, h2, h3, h4 {
+  font-family: 'BebasNeueBold';
 }

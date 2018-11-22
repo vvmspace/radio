@@ -84,10 +84,10 @@
         </main>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    This is a night-alpha version. User accounts and stats will be deleted after release.
+                <div class="powered-by">
+                    Powered by Vladimir V. Myagdeev just for fun
                 </div>
-                <div class="col-md-12">
+                <div class="counter">
                     <!--LiveInternet counter--><script type="text/javascript">
                         document.write("<a href='//www.liveinternet.ru/click' "+
                             "target=_blank><img src='//counter.yadro.ru/hit?t14.5;r"+
