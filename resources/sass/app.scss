@@ -49,13 +49,11 @@ nav, h1, h2, h3, h4 {
 
 .stations-list {
   &-item {
+    &:hover &-listened{
+      display: inline;
+    }
     &-listened {
       display: none;
-    }
-  }
-  &-item:hover {
-    &-listened {
-      display: inline;
     }
   }
 }
