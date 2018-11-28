@@ -46,3 +46,16 @@ nav, h1, h2, h3, h4 {
     margin-right: 7px;
   }
 }
+
+.stations-list {
+  &-item {
+    &-listened {
+      display: none;
+    }
+  }
+  &-item:hover {
+    &-listened {
+      display: inline;
+    }
+  }
+}
